@@ -20,78 +20,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Soroco Tabs</title>
-    <link rel="stylesheet" href="styles/material_icons.css">
-    <link rel="stylesheet" href="styles/main.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soroco Tabs</title>
+  <link rel="stylesheet" href="styles/material_icons.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-  <body>
-    <!-- main container -->
-    <div class="src-container">
+<body>
+  <!-- main container -->
+  <div class="src-container">
 
-      <!-- page header -->
-      <div class="src-header">Soroco</div>
-      <!-- left pane and right pane -->
-      <div class="src-panes">
-        <div class="column-pane left-pane">
-          <h4 class="pane-title">Original information</h4>
-          <div class="tab-container"></div>
-          <div class="tab-details"></div>
-          <div class="pane-lower-action">
-            <button type="button">Reject</button>
-          </div>
+    <!-- page header -->
+    <div class="src-header">Soroco</div>
+    <!-- left pane and right pane -->
+    <div class="src-panes">
+      <div class="column-pane left-pane">
+        <h4 class="pane-title">Original information</h4>
+        <div class="tab-container"></div>
+        <div class="tab-details"></div>
+        <div class="pane-lower-action">
+          <button type="button">Reject</button>
         </div>
+      </div>
 
-        <div class="column-pane right-pane">
-          <h4 class="pane-title">Validation data</h4>
-          <!-- All the tab headings are populated here and the current active tab has the class "active" -->
-          <div class="tab-container">
-            <div class="fixed-tab">
+      <div class="column-pane right-pane">
+        <h4 class="pane-title">Validation data</h4>
+        <!-- All the tab headings are populated here and the current active tab has the class "active" -->
+        <div class="tab-container">
+          <div class="dynamic-tabs" id="dynamic-tabs">
+            <div class="fixed-tab" onclick="handleTab()">
               <div class="src-tab add-transaction-tab active">
                 <div>
-                  <i class="material-icons">add_circle_outline</i> 
+                  <i class="material-icons">add_circle_outline</i>
                   <span>Add transaction</span>
                 </div>
               </div>
             </div>
-            <div class="dynamic-tabs" id="dynamic-tabs"></div>
           </div>
-
-          <!-- Place holder for respective tab details that loads when you click on a partticular tab -->
-          <!-- Adding a transaction is the default first tab -->
-          <div class="tab-details" id="add-transaction">
-            <div class="">
-              <strong>Create new tab:</strong>
-            </div>
-            <form>
-              <div class="input-group">
-                <label for="user-name">Employee Name</label>
-                <input type="text" id="user-name" placeholder="Employee name">
-              </div>
-              <div class="input-group">
-                <label for="user-login">Employee Login</label>
-                <input type="text" id="user-login" placeholder="Employee login">
-              </div>
-
-              <button type="submit" onclick="createTab(); return false;" class="create-tab-button">Create</button>
-            </form>
-          </div>
-
-          <div class="pane-lower-action">
-            <button type="button">Submit</button>
-          </div>
-
         </div>
+
+        <!-- Place holder for respective tab details that loads when you click on a partticular tab -->
+        <!-- Adding a transaction is the default first tab -->
+        <div class="tab-details" id="add-transaction">
+          <div class="user-detail">
+            
+          </div>
+          <div class="add-trans-area">
+              <div class="add-transaction">
+                  <strong>Create new tab:</strong>
+                </div>
+                <form>
+                  <div class="input-group">
+                    <label for="user-name">Employee Name</label>
+                    <input type="text" id="user-name" placeholder="Employee name">
+                  </div>
+                  <div class="input-group">
+                    <label for="user-login">Employee Login</label>
+                    <input type="text" id="user-login" placeholder="Employee login">
+                  </div>
+      
+                  <button type="submit" onclick="createTab(); return false;" class="create-tab-button">Create</button>
+                </form>
+          </div>
+        </div>
+
+        <div class="pane-lower-action">
+          <button type="button">Submit</button>
+        </div>
+
       </div>
-
     </div>
-  </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async defer></script>
-  <script src="scripts\tabs.js" charset="utf-8" async defer></script>
-  <script src="scripts\app.js" charset="utf-8" async defer></script>
+  </div>
+</body>
+
+<script src="scripts\tabs.js"></script>
+<script src="scripts\app.js"></script>
 
 </html>

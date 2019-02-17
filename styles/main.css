@@ -53,6 +53,7 @@
   box-shadow: 1px 3px 5px #ccc;
 }
 
+
 .left-pane{ }
 .left-pane > .tab-details{
   height: 100%;
@@ -67,7 +68,23 @@
   font-size: 12px;
   padding: 10px 20px 5px 10px;
   cursor: default;
+  min-width: 65px;
+  flex-basis: auto;
 }
+.src-tab .tab-line1{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 14px;
+}
+
+.src-tab .tab-line2{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 12px;
+}
+
 .src-tab.active{
   background: #f7f7f7;
   border-top: 2px solid #1597ff;
@@ -91,6 +108,7 @@
   /* float: left; */
   display: inline-block;
   vertical-align: top;
+  flex-basis: auto
 }
 
 .src-tab.add-transaction-tab{
@@ -106,6 +124,8 @@
 .dynamic-tabs{
   display: inline-block;
   vertical-align: top;
+  display: flex;
+  justify-content: space-between;
 }
 
 #add-transaction{
@@ -177,4 +197,15 @@
 .right-pane .pane-lower-action{ text-align: right; }
 .right-pane .pane-lower-action button{
   background: #8BC34A;
+}
+.hideMore{
+  display: none;
+}
+
+@media only screen and (max-width: 950px) {
+  .left-pane, .right-pane {
+    width: 100%;
+    height: auto;
+    float: none;
+  }
 }
